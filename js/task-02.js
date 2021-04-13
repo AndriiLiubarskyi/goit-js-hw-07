@@ -10,9 +10,13 @@ const ingredients = [
 
 const ulIngredients = document.getElementById("ingredients");
 
+const allElement = [];
 const element = ingredients.map(option => {
-    const ingredientsEl = document.createElement('li');
-    ingredientsEl.textContent = option;
-    ulIngredients.appendChild(ingredientsEl);
-    });
+  const ingredientsEl = document.createElement('li');
+  ingredientsEl.textContent = option;
+  allElement.push(ingredientsEl);
+  console.log(allElement);
+});
+    
+ulIngredients.append(...allElement);
 

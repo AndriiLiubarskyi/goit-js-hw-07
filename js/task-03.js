@@ -21,7 +21,10 @@ const galleryImg = document.querySelector('#gallery');
       galleryImg.style.flexDirection = "column";
       galleryImg.style.listStyleType = 'none';
 
+const arr = [];
+      
 const element = images.map(option => {
-      const textImg = `<li><img src = "${option.url}" alt="${option.alt}" width = "200">`;
-      galleryImg.insertAdjacentHTML('beforeend', textImg);
+  const textImg = `<li><img src = "${option.url}" alt="${option.alt}" width = "200">`;
+  arr.push(textImg);
 });
+      galleryImg.insertAdjacentHTML('beforeend', arr);

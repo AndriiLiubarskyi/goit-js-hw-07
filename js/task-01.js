@@ -1,12 +1,7 @@
-const list = categories.children;
-console.log(`В списке ${list.length} категории.`);
+const list = document.querySelector('#categories');
+console.log(`В списке ${list.children.length} категории.`);
 
-for (let i = 0; i < list.length; i += 1) {
-    const itemList = list[i];
-
-    const head = itemList.querySelector('h2');
-    console.log(`Категория: ${head.textContent}`);
-
-    const headLi = itemList.querySelector('ul').children;
-    console.log(`Количество элементов: ${headLi.length}`);
-};
+const itemsEl = document.querySelectorAll('li.item');
+itemsEl.forEach(element => {
+    console.log(`Категория: ${element.firstElementChild.textContent}, Количество элементов: ${element.querySelectorAll('li').length}`);
+});
